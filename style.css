@@ -1,0 +1,225 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #DEF6FF;
+  font-family: sans-serif;
+}
+
+.container {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.header {
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #fff;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+}
+
+.header .header-content {
+  display: flex;
+}
+
+.header .header-content h1 {
+  font-size: 28px;
+}
+
+.header .header-content h2 {
+  text-align: right;
+  font-size: 15px;
+}
+
+.days {
+  padding-top: 5%;
+  background-color: #fff;
+}
+
+.days .days-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.days .days-items p {
+  font-size: 13px;
+}
+
+.days .days-items p.active {
+  background-color: #83D9F9;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 15px;
+}
+
+.jadwals {
+  padding-top: 170px;
+  padding-bottom: 20%;
+}
+
+.jadwals .item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jadwals .item h4 {
+  font-size: 16px;
+}
+
+.jadwals .item p {
+  font-size: 15px;
+  color: #888;
+}
+
+.jadwals .item i {
+  font-size: 20px;
+  color: #888;
+  margin-left: 10px;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 30;
+}
+
+.bottom-bar .bottom-bar-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-bar .bottom-bar-items i {
+  font-size: 25px;
+  color: #888
+}
+
+.bottom-bar .bottom-bar-items i:hover {
+  color: #83D9F9;
+}
+
+.section-modal-form {
+  position: fixed;
+  background-color: rgba(0,0,0,.5);
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  bottom: 0;
+  display: none;
+  z-index: 50;
+}
+
+.modal-form {
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  position: fixed;
+  z-index: 70;
+  transform: translate(-50%, -50%);
+  background-color: #fff; 
+  padding: 30px 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+.modal-form .form {
+  margin-bottom: 10px;
+}
+
+.modal-form .form p {
+  color: #888;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.modal-form .form input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #F5F8F9;
+  margin-left: -5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+.modal-form .form button {
+  width: 50%;
+  background-color: #83D9F9;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: #fff;
+}
+
+.section-modal-edit {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  bottom: 0;
+  display: none;
+  z-index: 50;
+}
+
+.modal-edit {
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  position: fixed;
+  z-index: 70;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+.modal-edit .form {
+  margin-bottom: 10px;
+}
+
+.modal-edit .form p {
+  color: #888;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.modal-edit .form input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #F5F8F9;
+  margin-left: -5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+.modal-edit .form button {
+  width: 49%;
+  background-color: #83D9F9;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: #fff;
+}
