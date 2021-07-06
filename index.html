@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Myjadwal</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1>Jadwal Mata Pelajaranmu</h1>
+        <h2 id="tanggal"></h2>
+      </div>
+    </div>
+    <div class="days">
+      <div class="container">
+        <div class="days-items">
+          <p class="day" data-id="senin" id="senin">Senin</p>
+          <p class="day" data-id="selasa" id="selasa">Selasa</p>
+          <p class="day" data-id="rabu" id="rabu">Rabu</p>
+          <p class="day" data-id="kamis" id="kamis">Kamis</p>
+          <p class="day" data-id="jum'at" id="jum'at">Jum'at</p>
+          <p class="day" data-id="sabtu" id="sabtu">Sabtu</p>
+          <p class="day" data-id="minggu" id="minggu">Minggu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="jadwals">
+    <div class="container">
+      <div class="jadwals-items" id="items">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="bottom-bar">
+    <div class="container">
+      <div class="bottom-bar-items">
+        <i class="fa fa-bars"></i>
+        <i class="fa fa-plus" id="addForm"></i>
+        <i class="fa fa-bell"></i>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section-modal-form"></div>
+  <div class="modal-form">
+    <div class="form">
+      <h2>Tambah Jadwal</h2>
+      <p>Tambah Data Jadwal Pelajaranmu.</p>
+    </div>
+    <div class="form">
+      <input type="text" id="mapel" placeholder="Mata Pelajaran" />
+    </div>
+    <div class="form">
+      <input type="time" id="waktu" placeholder="Jam Pelajaran">
+    </div>
+    <div class="form">
+      <button id="tambah">Simpan</button>
+    </div>
+  </div>
+  
+  <div class="section-modal-edit"></div>
+  <div class="modal-edit">
+    <div class="form">
+      <h2>Edit Jadwal</h2>
+      <p>Edit Data Jadwal Pelajaranmu</p>
+    </div>
+    <div class="form">
+      <input type="text" id="editmapel" placeholder="Mata Pelajaran" />
+    </div>
+    <div class="form">
+      <input type="time" id="editwaktu" placeholder="Jam Pelajaran">
+    </div>
+    <div class="form">
+      <button id="edit">Ubah</button>
+    </div>
+  </div>
+  
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+  <script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
