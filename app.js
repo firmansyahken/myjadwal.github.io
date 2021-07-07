@@ -26,6 +26,10 @@ const days = document.querySelectorAll(".day")
 const tanggal = document.getElementById("tanggal")
 const addForm = document.getElementById("addForm")
 const items = document.getElementById("items")
+const secModalInsert = document.querySelector(".section-modal-form")
+const modalInsert = document.querySelector(".modal-form")
+const secModalEdit = document.querySelector(".section-modal-edit")
+const modalEdit = document.querySelector(".modal-edit")
 const mapelInput = document.getElementById("mapel")
 const waktuInput = document.getElementById("waktu")
 const mapelInputEdit = document.getElementById("editmapel")
@@ -90,22 +94,48 @@ function changeJadwal() {
   renderJadwal(id)
 }
 
-addForm.addEventListener("click", openModal)
+addForm.addEventListener("click", openModalInsert)
 
-function openModal() {
+/** function openModal() {
   $(".section-modal-form").fadeIn()
   $(".modal-form").fadeIn()
   $("body").css("overflowY", "hidden")
   $(".section-modal-form").on("click", closeModal)
+}**/
+
+function openModalInsert() {
+  secModalInsert.style.opacity = 1;
+  modalInsert.style.opacity = 1;
+  setTimeout(function() {
+    secModalInsert.style.display = "block"
+    modalInsert.style.display = "block"
+    document.body.style.overflowY = "hidden"
+  }, 200)
+  addBtn.addEventListener("click", insertData)
+  secModalInsert.addEventListener("click", closeModalInsert)
+  
 }
 
-function closeModal() {
+/**function closeModal() {
   $(".section-modal-form").fadeOut()
   $(".modal-form").fadeOut()
   $("body").css("overflowY", "scroll")
-}
+}**/
 
-addBtn.addEventListener("click", insertData)
+function closeModalInsert() {
+  secModalInsert.style.opacity = 1;
+  modalInsert.style.opacity = 1;
+  secModalInsert.style.transition = "opacity 1s";
+  modalInsert.style.transition = "opacity 1s";
+  secModalInsert.style.opacity = 0;
+  modalInsert.style.opacity = 0;
+  setTimeout(function() {
+    secModalInsert.style.display = "none";
+    modalInsert.style.display = "none";
+    document.body.style.overflowY = "scroll"
+  }, 300);
+  
+}
 
 function insertData() {
   let dataStore = {
@@ -132,13 +162,23 @@ function insertData() {
     "jam": waktuInput.value = ""
   }
 
-  closeModal()
+  closeModalInsert()
 
 }
 
+function openModalEdit() {
+  secModalEdit.style.opacity = 1;
+  modalEdit.style.opacity = 1;
+  setTimeout(function() {
+    secModalEdit.style.display = "block"
+    modalEdit.style.display = "block"
+    document.body.style.overflowY = "hidden"
+  }, 200)
+  secModalEdit.addEventListener("click", closeModalEdit)
+}
+
 function editData() {
-  $(".section-modal-edit").fadeIn()
-  $(".modal-edit").fadeIn()
+  openModalEdit()
   
   editId = this.dataset.id
   let active = document.querySelector(".day.active")
@@ -164,20 +204,26 @@ function editData() {
       } else {
         jadwals.jadwals[0][pageActive][editId] = dataEdit
         storeData()
-        closeEdit()
+        closeModalEdit()
         renderJadwal(pageActive)
       }
     })
   }
   
-  $("body").css("overflowY", "hidden")
-  $(".section-modal-edit").on("click", closeEdit)
 }
 
-function closeEdit() {
-  $(".section-modal-edit").fadeOut()
-  $(".modal-edit").fadeOut()
-  $("body").css("overflowY", "scroll")
+function closeModalEdit() {
+  secModalEdit.style.opacity = 1;
+  modalEdit.style.opacity = 1;
+  secModalEdit.style.transition = "opacity 1s";
+  modalEdit.style.transition = "opacity 1s";
+  secModalEdit.style.opacity = 0;
+  modalEdit.style.opacity = 0;
+  setTimeout(function() {
+    secModalEdit.style.display = "none";
+    modalEdit.style.display = "none";
+    document.body.style.overflowY = "scroll"
+  }, 300);
 }
 
 function removeData() {
